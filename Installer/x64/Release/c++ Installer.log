@@ -1,0 +1,7 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: Das Zwischenverzeichnis (x64\Release\) enthält freigegebene Dateien aus einem anderen Projekt (c++ Installer.vcxproj). Dies kann zu einem falschen Bereinigungs- und Neuerstellungsverhalten führen.
+  c++ Installer.cpp
+  Code wird generiert.
+  Previous IPDB not found, fall back to full compilation.
+  All 106 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Codegenerierung ist abgeschlossen.
+  c++ Installer.vcxproj -> C:\Users\Baumo\source\repos\c++ Installer\x64\Release\Installer.exe
